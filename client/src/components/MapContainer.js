@@ -1,9 +1,9 @@
 import React from "react";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
-import MapPosition from "./Map";
+import MapWrapper from "./Map";
 
-export default Location = () => {
+const MapContainer = () => {
   const { loading, error, data } = useQuery(gql`
     {
       location {
@@ -20,5 +20,7 @@ export default Location = () => {
   if (error) return <p>Error :(</p>;
   const { latitude, longitude } = data.location.iss_position;
 
-  return <MapPosition latitude={latitude} longitude={longitude} />;
+  return <MapWrapper latitude={latitude} longitude={longitude} />;
 };
+
+export default MapContainer;

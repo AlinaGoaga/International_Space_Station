@@ -1,0 +1,12 @@
+version: "2"
+services:
+  fe:
+    build: ./client
+    ports:
+      - "80:80"
+    depends_on:
+      - be
+  be:
+    build: ./server
+    ports:
+      - "8080:8080"

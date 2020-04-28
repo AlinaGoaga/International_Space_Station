@@ -2,8 +2,7 @@ import React from "react";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { Image, Grid } from "semantic-ui-react";
-import Location from "./components/Location";
-import "./App.css";
+import MapContainer from "./components/MapContainer";
 
 const client = new ApolloClient({
   uri: "http://localhost:5000/graphql"
@@ -22,7 +21,7 @@ function App() {
           centered={true}
         />
       </Grid>
-      <Location />
+      <MapContainer />
     </ApolloProvider>
   );
 }
